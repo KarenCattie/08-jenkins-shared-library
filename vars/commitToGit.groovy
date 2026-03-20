@@ -11,6 +11,6 @@ def call(){
         sh "git remote set-url origin https://${GIT_USER}:${GIT_PASS}@github.com/KarenCattie/08-jenkins-exercises.git"
         sh 'git add app/package.json' // Only commits `package.json` — that's the only file that changed (the version bump)
         sh "git commit -m \"ci: bump version to ${IMAGE_VERSION}\""
-        sh 'git push origin HEAD:main' // HEAD = "my current local commit", main = "push it to the main branch on GitHub"
+        sh 'git push origin HEAD:jenkins-shared-lib' // HEAD = "my current local commit", jenkins-shared-lib = "push it to the jenkins-shared-lib branch on GitHub"
     }
 }
